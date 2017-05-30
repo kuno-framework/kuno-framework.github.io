@@ -5,4 +5,4 @@ group: getting-started
 ---
 
 
-## Welcome to Kuno
+## Gettings Started
