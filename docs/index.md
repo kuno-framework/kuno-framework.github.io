@@ -1,5 +1,5 @@
 ---
-title: "Resources"
+title: "Reference: Message"
 layout: reference
 permalink: /
 ---
