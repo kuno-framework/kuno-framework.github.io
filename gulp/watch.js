@@ -14,6 +14,12 @@ module.exports = function (options) {
                 gulp.src('_dest/assets/**/*.css')
                 .pipe(browserSync.reload({ stream: true }));
             });
+
+        gulp.watch(['_dest/assets/**/*.html'],
+            function () {
+                gulp.src('_dest/assets/**/*.html')
+                    .pipe(browserSync.reload({ stream: true }));
+            });
     });
 };
         

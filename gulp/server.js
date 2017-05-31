@@ -15,7 +15,10 @@ module.exports = function (options) {
         browser = browser === undefined ? 'default' : browser;
 
         var server = {
-            baseDir: ['_dest']
+            baseDir: ['_dest'],
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         };
 
         if (middleware.length > 0) {
