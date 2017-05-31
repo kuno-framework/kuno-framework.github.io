@@ -1,60 +1,69 @@
 ---
-title: "Reference"
-layout: item
+layout: docs
+title: Introduction
+description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
+redirect_from: "/getting-started/"
 permalink: /
 ---
 
-  <div id="methods">
-            <div class="method" id="summary">
-                <div class="method-section clearfix">
-                    <h1>
-                        Reference: Message
-                    </h1>
-                    <div class="method-description">
-                        <h3>Summary</h3>
-                        <p>
-                            This is a documentation page demo for <a href="http://en.wikipedia.org/wiki/Application_programming_interface">an API</a>, you can use it for your own purposes if you want to showcase your API or some other kind of documentation for your app.
-                            The info shown here is merely for the demo so it is not real.
-                        </p>
-                        <p>
-                            You can edit the code with anything you like and use only the languages that you want, the code syntax highlighting is made using
-                            <a href="http://highlightjs.org" target="_blank">highlightjs.org</a> and supports a good
-                            variety of languages. Comes with some color schemes by default but you can easily customize the scheme of each language directly from the CSS.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="method" id="auth">
-                <div class="method-section clearfix">
-                    <div class="method-description">
-                        <h3>Context</h3>
-                        <p>
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="method" id="games">
-                <div class="method-section clearfix">
-                    <div class="method-description">
-                        <h3>Rules</h3>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                        <p>
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="method" id="users">
-                <div class="method-section clearfix">
-                    <div class="method-description">
-                        <h3>Examples</h3>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+Bootstrap is the world's most popular framework for building responsive, mobile-first sites and applications. Inside you'll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever.
+
+Here's how to quickly get started with the Bootstrap CDN and a template starter page.
+
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
+
+## Quick start
+
+Looking to quickly add Bootstrap to your project? Use the Bootstrap CDN, provided for free by the folks at MaxCDN. Using a package manager or need to download the source files? [Head to the downloads page.]({{ site.baseurl }}/getting-started/download/)
+
+Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
+
+{% highlight html %}
+<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+{% endhighlight %}
+
+Add our JavaScript plugins, jQuery, and Popper.js near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Popper.js first, as our code depends on them. While we use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/) in our docs, the full version is also supported.
+
+{% highlight html %}
+<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
+<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+{% endhighlight %}
+
+And that's it-you're on your way to a fully Bootstrapped site. If you're at all unsure about the general page structure, keep reading for an example page template.
+
+## Starter template
+
+Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:
+
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
+    <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+  </body>
+</html>
+{% endhighlight %}
+
+That's all you need for overall page requirements. Visit the [Layout docs]({{ site.baseurl }}/layout/overview/) or [our official examples]({{ site.baseurl }}/examples/) to start laying out your site's content and components.
+
+## Important globals
+
+Bootstrap employs a handful of important global styles and settings that you'll need to be aware of when using it, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
+
