@@ -15,11 +15,11 @@ module.exports = function (options) {
                 .pipe(browserSync.reload({ stream: true }));
             });
 
-        gulp.watch(['_dest/assets/**/*.html'],
-            function () {
-                gulp.src('_dest/assets/**/*.html')
-                    .pipe(browserSync.reload({ stream: true }));
-            });
+        //gulp.watch(['_dest/**/*.html'],
+        //    function () {
+        //        gulp.src('_dest/**/*.html')
+        //            .pipe(browserSync.reload({ stream: true }));
+        //    });
     });
 };
         

@@ -1,9 +1,8 @@
 ---
-layout: docs
-title: Message
+layout: home
+title: Kuno
 description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
-group: getting-started
-permalink: /reference/message
+permalink: /
 ---
 
 Bootstrap is the world's most popular framework for building responsive, mobile-first sites and applications. Inside you'll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever.

@@ -1,10 +1,9 @@
 ---
-layout: docs
-title: Introduction
+layout: reference
+title: Reference
 description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
 group: getting-started
-redirect_from: "/getting-started/"
-permalink: /
+permalink: /reference/index
 ---
 
 Bootstrap is the world's most popular framework for building responsive, mobile-first sites and applications. Inside you'll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever.

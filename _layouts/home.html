@@ -1,19 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include header.html %}
-  </head>
-  <body class="bd-home">
+<head>
+    <link href="{{ site.baseurl }}/assets/css/home.css" rel="stylesheet">
+</head>
+<body class="bd-home">
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-      <div class="container">
-        <span class="skiplink-text">Skip to main content</span>
-      </div>
+        <div class="container">
+            <span class="skiplink-text">Skip to main content</span>
+        </div>
     </a>
+    <header class="navbar navbar-inverse hero" role="banner">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">kuno</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#">
+                            Get Started
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            Learn More
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ site.baseurl }}/reference">
+                            Reference
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#">
+                            Source
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="index-hero">
+        <div class="container">
+            <h1 class="hero-text animated fadeInDown">
+                A Flexible Microservices<br /> Framework for Agile Teams
+            </h1>
+            <p class="sub-text animated fadeInDown">
+                Get your team firing on all cylinders quickly and predictably with an
+                easy to use, easy to learn framework designed with teams and products in mind.
+            </p>
+            <div class="cta animated fadeInDown">
+                <span class="hr"></span>
+                <a href="javascript:">
+                    <div style="display: inline-block">
+                        Create the Hello World Service in 10 minutes <br />using the Get Started tutorial.
+                    </div>
+                    <img style="display: inline-block; margin-left: 30px; position: relative; top: -12px;" src="{{ site.baseurl }}/assets/img/ellipse.png" />
+                </a>
+            </div>
+            <div class="img"></div>
+        </div>
+    </div>
+    <div class="features-section">
+        <div class="container">
+            <div class="row header">
+                <div class="col-md-12">
+                    <p>Why Kuno?</p>
+                    <h2>Set your Team's Velocity Loose</h2>
+                </div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-6 info">
+                    <h4>Easy to Learn</h4>
+                    <p>
+                        A simple framework built on industry standards makes way for a wealth of training resources from known experts.
+                        Developers can focus on the what instead of the how.  Lots of example documents from onboarding to
+                        deployment.
+                    </p>
+                </div>
+                <div class="col-md-6 image">
+                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1" />
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row feature backwards">
+                <div class="col-md-6 info">
+                    <h4>Team Based</h4>
+                    <p>
+                        Kuno facilitates a proven design and validation process. Service contracts
+                        are reflected in code and are validated with built-in code analysis, test reports
+                        and living documentation.
+                    </p>
 
-    {% include nav-home.html %}
+                </div>
+                <div class="col-md-6 image">
+                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2" />
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row feature">
+                <div class="col-md-6 info">
+                    <h4>Portable</h4>
+                    <p>
+                        Once built, easily use the same code and host with
+                        ASP.NET Core, Nancy FX, Akka.NET, etc.  Plug in different databases
+                        such as SQL and MongoDB.  When the newest technology comes out, you'll be
+                        ready for it.
+                    </p>
+                </div>
+                <div class="col-md-6 image">
+                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1" />
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row feature backwards">
+                <div class="col-md-6 info">
+                    <h4>Grow with Confidence</h4>
+                    <p>
+                        As your product matures, have confidence with easy to find answers and community
+                        posts.
+                    </p>
 
-    {{ content }}
+                </div>
+                <div class="col-md-6 image">
+                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2" />
+                </div>
+            </div>
+        </div>
+    </div>
 
-    {% include footer.html %}
-  </body>
+    <div class="sign-up-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom:50px;">
+                    <h3>Need Updates</h3>
+                    <p>
+                        Sign up now to receive email updates when new features<br />or content is added.
+                    </p>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <input type="text" placeholder="Your name" />
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" placeholder="Email" />
+                        </div>
+                        <div class="col-md-2" style="text-align:left;">
+                            <input type="button" class="btn btn-default" value="Sign Up" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 logo">kuno</div>
+                <div class="col-md-6 links">
+                    <a href="javascript:">Get Started</a>
+                    <a href="javascript:">Learn More</a>
+                    <a href="javascript:">Reference</a>
+                    <a href="javascript:">Blog</a>
+                    <a href="javascript:">Sources</a>
+                </div>
+                <div class="col-md-5 copyright">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
