@@ -2,6 +2,8 @@
 markdown:         kramdown
 highlighter:      rouge
 
+future:           true
+
 kramdown:
   auto_ids: true
 
