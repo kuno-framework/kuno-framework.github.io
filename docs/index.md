@@ -1,6 +1,6 @@
 ---
 title: "Resources"
-layout: reference
+layout: default
 permalink: /
 ---
 
