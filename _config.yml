@@ -1,6 +1,7 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
+title:            "kuno documentation"
 
 future:           true
 
