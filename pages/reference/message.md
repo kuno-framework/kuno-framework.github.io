@@ -1,7 +1,7 @@
 ---
 title: "Reference: Message"
 layout: item
-permalink: /
+permalink: /reference/message
 ---
   <div id="methods">
             <div class="method" id="summary">
