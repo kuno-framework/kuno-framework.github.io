@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Kuno Framework</title>
+    {% include social.html %}
     <link href="{{ site.baseurl }}/assets/css/home.css" rel="stylesheet">
 </head>
 <body class="bd-home">
@@ -22,7 +24,7 @@
             <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#">
+                        <a href="{{ site.baseurl }}/getting-started">
                             Get Started
                         </a>
                     </li>
@@ -34,11 +36,6 @@
                     <li class="dropdown">
                         <a href="{{ site.baseurl }}/reference">
                             Reference
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">
-                            Blog
                         </a>
                     </li>
                     <li class="hidden-sm hidden-xs">
@@ -61,7 +58,7 @@
             </p>
             <div class="cta animated fadeInDown">
                 <span class="hr"></span>
-                <a href="javascript:">
+                <a href="{{ site.baseurl }}/getting-started">
                     <div style="display: inline-block">
                         Create the Hello World Service in 10 minutes <br />using the Get Started tutorial.
                     </div>
@@ -76,20 +73,48 @@
             <div class="row header">
                 <div class="col-md-12">
                     <p>Why Kuno?</p>
-                    <h2>Set your Team's Velocity Loose</h2>
+                    <h2>Build Awesome Services</h2>
                 </div>
             </div>
-            <div class="row feature">
+        </div>
+        <img class="something-line" src="/assets/img/line.png"  />
+        <div class="features-section something">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Easy to Learn</h3>
+                        <p>A simple framework built on industry standards makes way for a wealth of training resources from known experts.
+                            Lots of example documents from onboarding to deployment.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Portable</h3>
+                        <p>
+                            Once built, easily use the same code and host with
+                            ASP.NET Core, Nancy FX, Akka.NET, Azure Functions, etc. Plug in different databases
+                            such as SQL and MongoDB. When the newest technology comes out, you'll be
+                            ready for it.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Scalable</h3>
+                        <p>
+                            As your product received more adoption, have confidence in the ability to scale features and services. Scaling requires 
+                            great monitoring and metrics.  All provided with kuno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row feature">
                 <div class="col-md-6 info">
                     <h4>Easy to Learn</h4>
                     <p>
                         A simple framework built on industry standards makes way for a wealth of training resources from known experts.
-                        Developers can focus on the what instead of the how.  Lots of example documents from onboarding to
+                        Developers can focus on the what instead of the how. Lots of example documents from onboarding to
                         deployment.
                     </p>
                 </div>
                 <div class="col-md-6 image">
-                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1" />
+                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1"/>
                 </div>
             </div>
             <div class="divider"></div>
@@ -104,7 +129,7 @@
 
                 </div>
                 <div class="col-md-6 image">
-                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2" />
+                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2"/>
                 </div>
             </div>
             <div class="divider"></div>
@@ -113,13 +138,13 @@
                     <h4>Portable</h4>
                     <p>
                         Once built, easily use the same code and host with
-                        ASP.NET Core, Nancy FX, Akka.NET, etc.  Plug in different databases
-                        such as SQL and MongoDB.  When the newest technology comes out, you'll be
+                        ASP.NET Core, Nancy FX, Akka.NET, etc. Plug in different databases
+                        such as SQL and MongoDB. When the newest technology comes out, you'll be
                         ready for it.
                     </p>
                 </div>
                 <div class="col-md-6 image">
-                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1" />
+                    <img src="{{ site.baseurl }}/assets/img/feature1.png" class="img-responsive" alt="feature1"/>
                 </div>
             </div>
             <div class="divider"></div>
@@ -133,13 +158,14 @@
 
                 </div>
                 <div class="col-md-6 image">
-                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2" />
+                    <img src="{{ site.baseurl }}/assets/img/feature2.png" class="img-responsive" alt="feature2"/>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 
     <div class="sign-up-section">
+        <div class="con
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="margin-bottom:50px;">

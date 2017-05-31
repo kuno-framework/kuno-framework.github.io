@@ -24,6 +24,12 @@ module.exports = function (options) {
             .pipe(concat('main.css'))
             .pipe(cssmin())
             .pipe(gulp.dest('assets/css'));
+
+        gulp.src('assets/scss/home.scss')
+            .pipe(sass().on('error', function (err) { console.log('ERR: ' + err); }))
+            .pipe(concat('home.css'))
+            .pipe(cssmin())
+            .pipe(gulp.dest('assets/css'));
     }
 };
 

@@ -1,19 +1,17 @@
 $black80: rgba(0, 0, 0, 0.80);
 
-head {
-    height: 0;
-}
-
-header {
-    position: absolute;
-}
-
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-family: Roboto;
 }
 
-.bd-navbar .navbar-nav .nav-link {
-    color: $black80;
+.bd-navbar {
+    .navbar-nav .nav-link {
+        color: $black80;
+    }
+
+    .nav-item {
+        margin-right: 15px;
+    }
 }
 
 
@@ -26,7 +24,7 @@ header {
     .bd-pageheader {
         padding: 10px;
         background: white;
-        margin-bottom:15px;
+        margin-bottom: 15px;
 
         h1 {
             color: $black80;
