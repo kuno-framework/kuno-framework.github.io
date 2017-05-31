@@ -1,6 +1,7 @@
 ---
-title: "Reference: Message"
-layout: "item"
+layout: item
+title: JavaScript
+description: Learn about Bootstrap's JavaScript—how to include it, our data and programmatic API options, and more.
 permalink: /
 ---
 
