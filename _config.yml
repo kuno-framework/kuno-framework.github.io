@@ -22,5 +22,4 @@ gems:
   - jekyll-sitemap
 
 # Custom vars
-current_version:  4.0.0-alpha.6
 repository:       kuno-framework/kuno-framework.github.io
