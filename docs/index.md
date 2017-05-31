@@ -1,6 +1,7 @@
 ---
-layout: default
-title: "Message"
+title: "Reference: Message"
+layout: item
+permalink: /
 ---
 
   <div id="methods">
