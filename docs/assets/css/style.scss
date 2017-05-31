@@ -1,4 +1,8 @@
 --- 
 --- 
 
-@import 'main.css';
+@import "{{ site.theme }}";
+@import "main.css";
+body {
+    display:none;
+}
