@@ -2,7 +2,6 @@
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
   <div class="dropdown-menu bd-search-results" id="search-results"></div>
 </form>
-
 <nav class="bd-links" id="docsNavbarContent">
   {% assign page_slug = page.url | split: '/' | last %}
   {% for group in site.data.nav %}
@@ -11,12 +10,12 @@
   {% assign group_slug = group.title | slugify %}
   {% assign active = nil %}
 
-  {% if page.group == group_slug %}
+  {% if page.section == group_slug %}
     {% assign active = 'active' %}
   {% endif %}
-
-  <div class="bd-toc-item {{ active }}">
-      <a class="bd-toc-link" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+    
+    <div class="bd-toc-item {{ active }}">
+      <a class="bd-toc-link" href="{{ site.baseurl }}/reference/{{ group_slug }}">
         {{ group.title }}
       </a>
 
@@ -30,7 +29,7 @@
           {% endif %}
 
           <li class="{{ active }}">
-            <a href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
+            <a href="{{ site.baseurl }}/reference/{{ doc_slug }}">
               {{ doc.title }}
             </a>
 

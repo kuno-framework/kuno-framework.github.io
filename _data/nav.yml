@@ -1,0 +1,11 @@
+- title: Messaging
+  pages:
+    - title: Message
+    - title: Request
+    - title: Response    
+    - title: Endpoint
+
+- title: Services
+  pages:
+    - title: Inventory
+    - title: OpenAPI

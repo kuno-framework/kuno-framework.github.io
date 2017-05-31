@@ -1,12 +1,20 @@
 ---
 layout: reference
-title: Kuno Reference
-description: Start here after learning learning the basics to get a better understanding of the innerworkings
+title: Reference
+description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
 group: reference
-permalink: /reference/index
+section: services
+permalink: /reference/services
 ---
 
-Kuno is built on the 
+Bootstrap is the world's most popular framework for building responsive, mobile-first sites and applications. Inside you'll find high quality HTML, CSS, and JavaScript to make starting any project easier than ever.
+
+Here's how to quickly get started with the Bootstrap CDN and a template starter page.
+
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 ## Quick start
 

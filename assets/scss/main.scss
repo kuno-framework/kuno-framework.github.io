@@ -1,3 +1,5 @@
+$black80: rgba(0, 0, 0, 0.80);
+
 head {
     height: 0;
 }
@@ -11,29 +13,27 @@ header {
 }
 
 .bd-navbar .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.80);
+    color: $black80;
 }
 
 
 .bd-pageheader {
-    background: #39add1;
+    background: #318BB5;
     color: white;
 }
 
-#bd-main-nav {
-    /*float: right !important;
-    text-align: right;
+.bd-item {
+    .bd-pageheader {
+        padding: 10px;
+        background: white;
+        margin-bottom:15px;
 
-    ul {
-        float: right !important;
-        text-align: right;
-        margin-right:0;
-    }*/
-    ul {
-
+        h1 {
+            color: $black80;
+            font-size: 45px;
+        }
     }
 }
-
 
 
 #__bs_notify__ {
