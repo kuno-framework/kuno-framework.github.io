@@ -11,13 +11,11 @@ kramdown:
 permalink:        pretty
 
 # Server
-source:           docs
-destination:      _gh_pages
+destination:      _dest
 host:             0.0.0.0
 port:             9001
 baseurl:          ""
 encoding:         UTF-8
-exclude:          [assets/scss/]
 
 gems:
   - jekyll-redirect-from
