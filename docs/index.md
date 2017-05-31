@@ -1,6 +1,6 @@
 ---
 title: "Reference: Message"
-layout: default
+layout: item
 permalink: /
 ---
 ss
