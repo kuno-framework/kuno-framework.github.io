@@ -3,7 +3,6 @@ title: "Reference: Message"
 layout: item
 permalink: /
 ---
-ss
   <div id="methods">
             <div class="method" id="summary">
                 <div class="method-section clearfix">
