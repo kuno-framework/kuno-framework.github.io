@@ -3,3 +3,4 @@ _gh_pages/
 _dest/
 /.vs
 /.vs
+/node_modules
