@@ -12,6 +12,8 @@ packet as a message, and then send the message on a channel. Likewise, a receive
 receives a message and must extract the data from the message to process it. The message system will 
 try repeatedly to deliver the message (e.g., transmit it from the sender to the receiver) until it succeeds.
 
+[Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions](https://www.safaribooksonline.com/library/view/enterprise-integration-patterns/0321200683/)
+
 ## Context
 
 

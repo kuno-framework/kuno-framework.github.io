@@ -6,7 +6,7 @@ group: reference
 permalink: /reference/index
 ---
 
-This reference section contains desscriptions, context diagrams, rules and examples for all of the core
+This reference section contains descriptions, context diagrams, rules and examples for all of the core
 items in Kuno.  Use the search on the right or click through following references to find what you are looking
 for.
 
