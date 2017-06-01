@@ -1,5 +1,9 @@
 $black80: rgba(0, 0, 0, 0.80);
 
+@import "lightgallery";
+@import "lg-transitions";
+
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-family: Roboto;
 }
@@ -311,9 +315,9 @@ $black80: rgba(0, 0, 0, 0.80);
 .lightgallery {
     img {
         width: 150px;
-        margin-right:15px;
+        margin-right: 15px;
     }
 
-    margin-top:25px;
-    margin-bottom:50px;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }

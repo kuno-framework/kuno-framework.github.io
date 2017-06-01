@@ -115,8 +115,6 @@ In a web browser, navigate to [http://localhost:5000/swagger](http://localhost:5
       <img src="/assets/img/console.png" />
   </a>
 </div>
-<link type="text/css" rel="stylesheet" href="/assets/css/lightGallery.css" /> 
-<link type="text/css" rel="stylesheet" href="/assets/css/lg-transitions.css" /> 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/g/lightgallery,lg-autoplay,lg-fullscreen,lg-hash,lg-pager,lg-share,lg-thumbnail,lg-video,lg-zoom"></script>
 

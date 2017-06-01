@@ -59,8 +59,6 @@ This section adds to the quick start.  If you haven't done that yet, you can fin
 
 
 
-<link type="text/css" rel="stylesheet" href="/assets/css/lightGallery.css" /> 
-<link type="text/css" rel="stylesheet" href="/assets/css/lg-transitions.css" /> 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/g/lightgallery,lg-autoplay,lg-fullscreen,lg-hash,lg-pager,lg-share,lg-thumbnail,lg-video,lg-zoom"></script>
 
