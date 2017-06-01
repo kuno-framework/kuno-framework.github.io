@@ -1,117 +1,164 @@
 ---
 layout: getting-started
 title: Getting Started
-description: Start here after learning learning the basics to get a better understanding of the innerworkings
+description: Welcome to Kuno!  The best way to learn is hands on.  Try the Quick Start below.
 group: getting-started
 permalink: /getting-started/index
+current-nav:
+    - title: Create the Project
+      anchor: create-the-project
+    - title: Create the Request and Endpoint
+      anchor: create-the-request-and-endpoint
+    - title: Run the Application
+      anchor: run-the-application
+    - title: Explore
+      anchor: explore
 ---
 
-Kuno is built on the 
-
-
-{{ page.layout }}
 ## Quick start
 
-Looking to quickly add Bootstrap to your project? Use the Bootstrap CDN, provided for free by the folks at MaxCDN. Using a package manager or need to download the source files? [Head to the downloads page.]({{ site.baseurl }}/getting-started/download/)
+The following example demonstrates the quickest way to get something up and running.
 
-Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
+<div style="height:20px">&nbsp;</div>
 
-{% highlight html %}
-<link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
+#### Create the Project
+1. Create a new .NET Core console application named **HelloWorldService** in Visual Studio 2017.
+2. Right-click on the project in Solution Explorer and click "Edit HelloWorldService.csproj".
+3. Update the framework to use **net461**.  You can do this by right-clicking on the project in 
+Solution Explorer and then clicking on "Edit HelloWorldService.csproj".
+{% highlight xml %}
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+</Project>
 {% endhighlight %}
-
-Add our JavaScript plugins, jQuery, and Popper.js near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Popper.js first, as our code depends on them. While we use [jQuery's slim build](https://blog.jquery.com/2016/06/09/jquery-3-0-final-released/) in our docs, the full version is also supported.
-
-{% highlight html %}
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-<script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
+{:start="3"}
+2. Install the **Kuno.AspNetCore** NuGet package.  This will also install the core Kuno NuGet package.  
+{% highlight nuget %}
+Install-Package Kuno
 {% endhighlight %}
+<div class="lightgallery">
+  <a href="/assets/img/hello-world-project.png">
+      <img src="/assets/img/hello-world-project.png" />
+  </a>
+  <a href="/assets/img/change-framework.png">
+      <img src="/assets/img/change-framework.png" />
+  </a>
+  <a href="/assets/img/nuget.png">
+      <img src="/assets/img/nuget.png" />
+  </a>
+</div>
 
-And that's it—you're on your way to a fully Bootstrapped site. If you're at all unsure about the general page structure, keep reading for an example page template.
 
-## Starter template
+#### Create the Request and Endpoint
 
-Be sure to have your pages set up with the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:
+1. Create a class named **HelloWorldRequest**.
+{% highlight csharp %}
+public class HelloWorldRequest
+{
+    public string Name { get; }
 
-{% highlight html %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-    <script src="{{ site.cdn.popper }}" integrity="{{ site.cdn.popper_hash }}" crossorigin="anonymous"></script>
-    <script src="{{ site.cdn.js }}" integrity="{{ site.cdn.js_hash }}" crossorigin="anonymous"></script>
-  </body>
-</html>
+    public HelloWorldRequest(string name)
+    {
+        this.Name = name;
+    }
+}
 {% endhighlight %}
-
-That's all you need for overall page requirements. Visit the [Layout docs]({{ site.baseurl }}/layout/overview/) or [our official examples]({{ site.baseurl }}/examples/) to start laying out your site's content and components.
-
-## Important globals
-
-Bootstrap employs a handful of important global styles and settings that you'll need to be aware of when using it, all of which are almost exclusively geared towards the *normalization* of cross browser styles. Let's dive in.
-
-### HTML5 doctype
-
-Bootstrap requires the use of the HTML5 doctype. Without it, you'll see some funky incomplete styling, but including it shouldn't cause any considerable hiccups.
-
-{% highlight html %}
-<!DOCTYPE html>
-<html lang="en">
-  ...
-</html>
-{% endhighlight %}
-
-### Responsive meta tag
-
-Bootstrap is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive viewport meta tag** to your `<head>`.
-
-{% highlight html %}
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{% endhighlight %}
-
-You can see an example of this in action in the [starter template](#starter-template).
-
-### Box-sizing
-
-For more straightforward sizing in CSS, we switch the global `box-sizing` value from `content-box` to `border-box`. This ensures `padding` does not affect the final computed width of an element, but it can cause problems with some third party software like Google Maps and Google Custom Search Engine.
-
-On the rare occasion you need to override it, use something like the following:
-
-{% highlight scss %}
-.selector-for-some-widget {
-  box-sizing: content-box;
+{:start="2"}
+2. Create an endpoint named **HelloWorld**.
+{% highlight csharp %}
+[EndPoint("hello/greet")]
+public class HelloWorld : EndPoint<HelloWorldRequest, string>
+{
+    public override string Receive(HelloWorldRequest instance)
+    {
+        return "Hello " + instance.Name + "!";
+    }
 }
 {% endhighlight %}
 
-With the above snippet, nested elements—including generated content via `:before` and `:after`—will all inherit the specified `box-sizing` for that `.selector-for-some-widget`.
+#### Run the Application
+Initialize a new Stack and run the web host.
+{% highlight csharp %}
+public static void Main(string[] args)
+{
+    using (var stack = new Stack())
+    {
+        stack.RunWebHost();
+    }
+}
+{% endhighlight %}
 
-Learn more about [box model and sizing at CSS Tricks](https://css-tricks.com/box-sizing/).
+#### Explore
+In a web browser, navigate to http://localhost:5000/swagger.
 
-### Reboot
+1. Expand the Hello World endpoint, click "Try it out", and then "Execute".
+2. Try out some of the system endpoints.
+3. Check the console to see the output.
 
-For improved cross-browser rendering, we use [Reboot]({{ site.baseurl }}/content/reboot/) to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
+<div class="lightgallery">
+  <a href="/assets/img/swagger.png">
+      <img src="/assets/img/swagger.png" />
+  </a>
+  <a href="/assets/img/swagger2.png">
+      <img src="/assets/img/swagger2.png" />
+  </a>
+   <a href="/assets/img/console.png">
+      <img src="/assets/img/console.png" />
+  </a>
+</div>
+<link type="text/css" rel="stylesheet" href="/assets/css/lightGallery.css" /> 
+<link type="text/css" rel="stylesheet" href="/assets/css/lg-transitions.css" /> 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/g/lightgallery,lg-autoplay,lg-fullscreen,lg-hash,lg-pager,lg-share,lg-thumbnail,lg-video,lg-zoom"></script>
 
-## Community
+<style type="text/css">
+.lg-backdrop.in {
+    opacity: 0.65;
+}
 
-Stay up to date on the development of Bootstrap and reach out to the community with these helpful resources.
+.fixed-size.lg-outer .lg-inner {
+}
 
-- Follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap).
-- Read and subscribe to [The Official Bootstrap Blog]({{ site.blog }}).
-- Join [the official Slack room]({{ site.slack }}).
-- Chat with fellow Bootstrappers in IRC. On the `irc.freenode.net` server, in the `##bootstrap` channel.
-- Implementation help may be found at Stack Overflow (tagged [`bootstrap-4`](https://stackoverflow.com/questions/tagged/bootstrap-4)).
-- Developers should use the keyword `bootstrap` on packages which modify or add to the functionality of Bootstrap when distributing through [npm](https://www.npmjs.com/browse/keyword/bootstrap) or similar delivery mechanisms for maximum discoverability.
+.fixed-size.lg-outer .lg-sub-html {
+    position: absolute;
+    text-align: left;
+}
 
-You can also follow [@getbootstrap on Twitter](https://twitter.com/getbootstrap) for the latest gossip and awesome music videos.
+.fixed-size.lg-outer .lg-toolbar {
+    background-color: transparent;
+    height: 0;
+}
+
+.fixed-size.lg-outer .lg-toolbar .lg-icon {
+    color: #FFF;
+}
+
+.fixed-size.lg-outer .lg-img-wrap {
+    padding: 12px;
+}
+
+.lightgallery a {
+    text-decoration: none !important;
+}
+</style>
+
+<script type="text/javascript">
+$(".lightgallery").lightGallery({
+    mode: 'lg-fade',
+    addClass: 'fixed-size',
+    download: false,
+    startClass: '',
+    enableSwipe: false,
+    enableDrag: false,
+    share:false,
+    autoplay:false,
+    autoplayControls:false,
+    thumbnail: false,
+    actualSize: false,
+    hideControlOnEnd: true,
+    loop: false,
+    speed: 200}); 
+</script>

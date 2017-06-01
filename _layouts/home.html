@@ -77,14 +77,16 @@
                 </div>
             </div>
         </div>
-        <img class="something-line" src="/assets/img/line.png"  />
+        <img class="something-line" src="/assets/img/line.png" />
         <div class="features-section something">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <h3>Easy to Learn</h3>
-                        <p>A simple framework built on industry standards makes way for a wealth of training resources from known experts.
-                            Lots of example documents from onboarding to deployment.</p>
+                        <p>
+                            A simple framework built on industry standards makes way for a wealth of training resources from known experts.
+                            Lots of example documents from onboarding to deployment.
+                        </p>
                     </div>
                     <div class="col-md-4">
                         <h3>Portable</h3>
@@ -98,7 +100,7 @@
                     <div class="col-md-4">
                         <h3>Scalable</h3>
                         <p>
-                            As your product received more adoption, have confidence in the ability to scale features and services. Scaling requires 
+                            As your product received more adoption, have confidence in the ability to scale features and services. Scaling requires
                             great monitoring and metrics.  All provided with kuno.
                         </p>
                     </div>
@@ -165,7 +167,6 @@
     </div>
 
     <div class="sign-up-section">
-        <div class="con
         <div class="container">
             <div class="row">
                 <div class="col-md-12" style="margin-bottom:50px;">
@@ -174,8 +175,7 @@
                         Sign up now to receive email updates when new features<br />or content is added.
                     </p>
                 </div>
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-12 name-entry">
                     <div class="row">
                         <div class="col-md-5">
                             <input type="text" placeholder="Your name" />
@@ -191,21 +191,28 @@
             </div>
         </div>
     </div>
-    <div class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-1 logo">kuno</div>
-                <div class="col-md-6 links">
-                    <a href="javascript:">Get Started</a>
-                    <a href="javascript:">Learn More</a>
-                    <a href="javascript:">Reference</a>
-                    <a href="javascript:">Blog</a>
-                    <a href="javascript:">Sources</a>
-                </div>
-                <div class="col-md-5 copyright">
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 logo">kuno</div>
+                    <div class="col-md-6 links">
+                        <a href="{{ site.baseurl }}/getting-started">
+                            Get Started
+                        </a>
+                        <a href="#">
+                            Learn More
+                        </a>
+                        <a href="{{ site.baseurl }}/reference">
+                            Reference
+                        </a>
+                        <a href="#">
+                            Source
+                        </a>
+                    </div>
+                    <div class="col-md-5 copyright">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 </html>

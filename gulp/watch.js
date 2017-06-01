@@ -12,7 +12,10 @@ module.exports = function (options) {
         gulp.watch(['_dest/assets/**/*.css'],
             function () {
                 gulp.src('_dest/assets/**/*.css')
-                .pipe(browserSync.reload({ stream: true }));
+                    .pipe(browserSync.reload({
+                        stream: true,
+                        match: "**/*.css"
+                    }));
             });
 
         //gulp.watch(['_dest/**/*.html'],
@@ -22,4 +25,3 @@ module.exports = function (options) {
         //    });
     });
 };
-        
