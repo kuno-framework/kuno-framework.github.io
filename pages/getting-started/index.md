@@ -5,14 +5,20 @@ description: Welcome to Kuno!  The best way to learn is hands on.  Try the Quick
 group: getting-started
 permalink: /getting-started/index
 current-nav:
-    - title: Create the Project
-      anchor: create-the-project
-    - title: Create the Request and Endpoint
-      anchor: create-the-request-and-endpoint
-    - title: Run the Application
-      anchor: run-the-application
-    - title: Explore
-      anchor: explore
+    - title: Quick Start
+      link: '#create-the-project'
+      active: true
+      children:
+        - title: Create the Project
+          link: '#create-the-project'
+        - title: Create the Request and Endpoint
+          link: '#create-the-request-and-endpoint'
+        - title: Run the Application
+          link: '#run-the-application'
+        - title: Explore
+          link: '#explore'
+    - title: Next Steps
+      link: /getting-started/next-steps
 ---
 
 ## Quick start
@@ -92,7 +98,7 @@ public static void Main(string[] args)
 {% endhighlight %}
 
 #### Explore
-In a web browser, navigate to http://localhost:5000/swagger.
+In a web browser, navigate to [http://localhost:5000/swagger](http://localhost:5000/swagger).
 
 1. Expand the Hello World endpoint, click "Try it out", and then "Execute".
 2. Try out some of the system endpoints.

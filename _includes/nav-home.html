@@ -14,16 +14,16 @@
                     <a class="nav-link {% if page.layout == "home" %}active{% endif %}" href="{{ site.baseurl }}/">Kuno</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if page.layout == "getting-started" %}active{% endif %}" href="#">Get Started</a>
+                    <a class="nav-link {% if page.layout == "getting-started" %}active{% endif %}" href="/getting-started">Get Started</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Learn More</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if page.layout == "reference" %}active{% endif %}" href="{{ site.baseurl }}/reference/">Reference</a>
+                    <a class="nav-link {% if page.layout == "reference" or page.layout == "reference-item" %}active{% endif %}" href="{{ site.baseurl }}/reference/">Reference</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Source</a>
+                    <a class="nav-link" href="http://github.com/kuno-framework/kuno">Source</a>
                 </li>
             </ul>
         </div>
