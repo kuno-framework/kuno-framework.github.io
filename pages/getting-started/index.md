@@ -43,7 +43,7 @@ Solution Explorer and then clicking on "Edit HelloWorldService.csproj".
 {:start="3"}
 2. Install the **Kuno.AspNetCore** NuGet package.  This will also install the core Kuno NuGet package.  
 {% highlight nuget %}
-Install-Package Kuno
+Install-Package Kuno.AspNetCore
 {% endhighlight %}
 <div class="lightgallery">
   <a href="/assets/img/hello-world-project.png">
