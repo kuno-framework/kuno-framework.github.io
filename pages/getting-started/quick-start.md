@@ -32,7 +32,7 @@ current-nav:
       
 ---
 
-Kuno is an integration and composition framework that bring together a lot of concepts and open-source components.  The
+Kuno is an integration and composition framework that brings together a lot of concepts and open-source components.  The
 quick start will give you a better understanding of what is possible.
 
 ### Create the Project
