@@ -1,9 +1,23 @@
 ---
-layout: reference-item
+layout: default-right-nav
 title: Message
-description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
+description: The standard for communication between components and services.
 group: reference
+css-class: 'ku-rule'
 permalink: /reference/message
+current-nav:
+    - title: Contents
+      link: '#'        
+      active: true
+      children:
+        - title: Summary
+          link: '#'
+        - title: Context
+          link: '#context'
+        - title: Examples
+          link: '#examples'
+        - title: Rules
+          link: '#rules'
 ---
 
 A message is an atomic packet of data that can be transmitted on a channel. Thus, 
@@ -12,12 +26,14 @@ packet as a message, and then send the message on a channel. Likewise, a receive
 receives a message and must extract the data from the message to process it. The message system will 
 try repeatedly to deliver the message (e.g., transmit it from the sender to the receiver) until it succeeds.
 
-[Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions](https://www.safaribooksonline.com/library/view/enterprise-integration-patterns/0321200683/)
+[Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions](https://www.safaribooksonline.com/library/view/enterprise-integration-patterns/0321200683/) - Safari Books Online
 
-## Context
+### Context
 
 
-## Examples
+### Examples
+
+The following is the full Add Product Request example.
 
 {% highlight cs %}
 /// <summary>
@@ -47,10 +63,8 @@ public class AddProductRequest
 {% endhighlight %}
 
 
-## Rules
+### Rules
 
-**KU1000**
-
-
-**KU1001**
+- [K1000](/rules/1000) - Messages should not contain fields.
+- [K1001](/rules/1001) - Message properties must be read-only.
 
