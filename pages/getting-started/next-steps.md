@@ -6,7 +6,7 @@ group: getting-started
 permalink: /getting-started/next-steps
 current-nav:
     - title: Quick Start
-      link: /getting-started          
+      link: /        
     - title: Next Steps
       link: '#'
       active: true
@@ -25,10 +25,11 @@ image-set1:
     - /assets/img/next-steps/screen-3.png
 ---
 
-This section adds to the quick start.  If you haven't done that yet, you can find it [here](/).
+This section adds to the quick start.  If you haven't completed the quick start yet, you can find it [here](/) or on the right.
 
-#### Add API Definition
-Add a new file named **kuno.json** to configure the API and point the schema reference to **https://github.com/kuno-framework/kuno/raw/master/kuno/schema.json**.
+#### Add the API Definition
+Add a new file named **kuno.json** to configure the API.  Point the schema reference to **https://github.com/kuno-framework/kuno/raw/master/kuno/schema.json**.  The
+resulting file should look like the following:
 {% highlight json %}
 {
   "kuno": {
@@ -38,6 +39,7 @@ Add a new file named **kuno.json** to configure the API and point the schema ref
   }
 }
 {% endhighlight %}
-Run the application and naviate to [http://localhost:5000/swagger](http://localhost:5000/swagger).  You should see the addition information in the definition.
+Run the application and navigate to [http://localhost:5000/swagger](http://localhost:5000/swagger).  You should see 
+the additional information in the definition.
 
 {% include light-gallery.html images=page.image-set1 %}
