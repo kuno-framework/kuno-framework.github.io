@@ -1,46 +1,11 @@
-  <div class="main-footer">
+<footer class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-md-1 logo">kuno</div>
-            <div class="col-md-6 links">
-                <a href="{{ site.baseurl }}/getting-started">
-                    Get Started
-                </a>
-                <a href="#">
-                    Learn More
-                </a>
-                <a href="{{ site.baseurl }}/reference">
-                    Reference
-                </a>
-                <a href="#">
-                    Source
-                </a>
-            </div>
-            <div class="col-md-5 copyright">
-            </div>
-        </div>
+        <span class="text-muted">k&uuml;no</span>
     </div>
-</div>
-
-<script src="{{ site.cdn.jquery }}" integrity="{{ site.cdn.jquery_hash }}" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+</footer>
 
 <script src="{{ site.baseurl }}/assets/js/vendor/popper.min.js"></script>
-
-{% if site.github %}
-  <script src="{{ site.baseurl }}/dist/js/bootstrap.min.js"></script>
-{% else %}
-  <script src="{{ site.baseurl }}/dist/js/bootstrap.js"></script>
-{% endif %}
-
-{% if site.github %}
-  <script src="{{ site.baseurl }}/assets/js/docs.min.js"></script>
-{% else %}
-  <script src="{{ site.baseurl }}/assets/js/vendor/anchor.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/vendor/clipboard.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/vendor/holder.min.js"></script>
-  <script src="{{ site.baseurl }}/assets/js/src/application.js"></script>
-{% endif %}
+<script src="{{ site.baseurl }}/assets/js/docs.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
@@ -50,21 +15,30 @@
 <script src="{{ site.baseurl }}/assets/js/vendor/jekyll-search.min.js"></script>
 
 <script>
-SimpleJekyllSearch.init({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('search-results'),
-  searchResultTemplate: '<a class="dropdown-item" href="{url}">{title}</a>',
-  noResultsText: '<div class="dropdown-item no-results">Sorry, there are no results for that search.</div>',
-  json: '{{ site.baseurl }}/search.json'
-})
+    SimpleJekyllSearch.init({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        searchResultTemplate: '<a class="dropdown-item" href="{url}">{title}</a>',
+        noResultsText: '<div class="dropdown-item no-results">Sorry, there are no results for that search.</div>',
+        json: '{{ site.baseurl }}/search.json'
+    })
 </script>
 {% endif %}
 
-<script>
-Holder.addTheme('gray', {
-  bg: '#777',
-  fg: 'rgba(255,255,255,.75)',
-  font: 'Helvetica',
-  fontweight: 'normal'
-})
+<script type="text/javascript">
+    $(".lightgallery").lightGallery({
+        mode: 'lg-fade',
+        addClass: 'fixed-size',
+        download: false,
+        startClass: '',
+        enableSwipe: false,
+        enableDrag: false,
+        share:false,
+        autoplay:false,
+        autoplayControls:false,
+        thumbnail: false,
+        actualSize: false,
+        hideControlOnEnd: true,
+        loop: false,
+        speed: 200}); 
 </script>
