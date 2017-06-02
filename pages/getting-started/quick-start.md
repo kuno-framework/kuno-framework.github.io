@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-right-nav
 title: Getting Started
 description: Welcome to Kuno!  The best way to learn is hands on.  Try the Quick Start below.
 permalink: /
@@ -13,9 +13,27 @@ image-set3:
     - assets/img/quick-start/swagger.png
     - assets/img/quick-start/requests.png
     - assets/img/quick-start/console.png
+current-nav:
+    - title: Quick Start
+      active: true
+      link: '#'   
+      children:
+        - title: Create the Project
+          link: '#create-the-project'
+        - title: Create the Request and Endpoint
+          link: '#create-the-request-and-endpoint'
+        - title: Run the Application
+          link: '#run-the-application'
+        - title: Explore
+          link: '#explore'
+    - title: Next Steps
+      link: /getting-started/next-steps
+    
+      
 ---
 
-
+Kuno is an integration and composition framework that bring together a lot of concepts and open-source components.  The
+quick start will give you a better understanding of what is possible.
 
 ### Create the Project
 Create a new .NET Core console application named **HelloWorldService** in Visual Studio 2017.
@@ -45,12 +63,7 @@ Create a class named **HelloWorldRequest**.
 {% highlight csharp %}
 public class HelloWorldRequest
 {
-    public string Name { get; }
-
-    public HelloWorldRequest(string name)
-    {
-        this.Name = name;
-    }
+    public string Name { get; set;  }
 }
 {% endhighlight %}
 Create an endpoint named **HelloWorld**.

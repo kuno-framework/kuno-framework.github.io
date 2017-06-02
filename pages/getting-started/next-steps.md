@@ -15,14 +15,19 @@ current-nav:
           link: '#update-api-definition'
         - title: Add Code Analysis
           link: '#add-code-analysis'
-        - title: Document
-          link: '#document'
+        - title: Deploy the API
+          link: '#deploy'
         - title: Integrate
           link: '#integrate'
 image-set1:
     - /assets/img/next-steps/screen-1.png
     - /assets/img/next-steps/screen-2.png
     - /assets/img/next-steps/screen-3.png
+image-set2:
+    - /assets/img/next-steps/screen-4.png
+    - /assets/img/next-steps/screen-5.png
+    - /assets/img/next-steps/screen-6.png
+    - /assets/img/next-steps/screen-7.png
 ---
 
 This section adds to the quick start.  If you haven't completed the quick start yet, you can find it [here](/) or on the right.
@@ -43,3 +48,27 @@ Run the application and navigate to [http://localhost:5000/swagger](http://local
 the additional information in the definition.
 
 {% include light-gallery.html images=page.image-set1 %}
+
+### Add Code Analysis
+Install the **Kuno.CodeAnalysis** NuGet package.  This will also install the core Kuno NuGet package.  
+{% highlight nuget %}
+Install-Package Kuno.CodeAnalysis
+{% endhighlight %}
+
+Notice that the ```HelloWorldRequest``` has an error.  The information for the error can be found in the Error List window.
+Click the **K1001** error and navigate to the rule page.
+
+Fix the request so that it looks like the following.
+{% highlight csharp %}
+public class HelloWorldRequest
+{
+    public string Name { get; }
+
+    public HelloWorldRequest(string name)
+    {
+        this.Name = name;
+    }
+}
+{% endhighlight %}
+
+{% include light-gallery.html images=page.image-set2 %}
