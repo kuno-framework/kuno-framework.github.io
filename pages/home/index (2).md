@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 title: Getting Started
 description: Welcome to Kuno!  The best way to learn is hands on.  Try the Quick Start below.
 permalink: /ss

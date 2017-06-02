@@ -1,5 +1,5 @@
 ---
-layout: getting-started
+layout: default-right-nav
 title: Next Steps
 description: You've got the basics.  Now let's add some detail.
 group: getting-started
@@ -21,11 +21,7 @@ current-nav:
           link: '#integrate'
 ---
 
-## Next steps
-
-This section adds to the quick start.  If you haven't done that yet, you can find it [here](/getting-started).
-
-<div style="height:20px">&nbsp;</div>
+This section adds to the quick start.  If you haven't done that yet, you can find it [here](/).
 
 #### Update API Definition
 1. Add a new file named **kuno.json** to configure the API.  
