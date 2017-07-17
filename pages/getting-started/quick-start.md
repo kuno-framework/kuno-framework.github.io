@@ -20,8 +20,8 @@ current-nav:
       children:
         - title: Create the Project
           link: '#create-the-project'
-        - title: Create the Request and Endpoint
-          link: '#create-the-request-and-endpoint'
+        - title: Create the Request and Service
+          link: '#create-the-request-and-service'
         - title: Run the Application
           link: '#run-the-application'
         - title: Explore
@@ -32,15 +32,19 @@ current-nav:
       
 ---
 
-Kuno is an integration and composition framework that brings together a lot of concepts and open-source components.  The
-quick start will give you a better understanding of what is possible.
+Kuno is an integration and composition framework for microservices that brings together core concepts and open-source components.  The
+quick start will give you a better understanding of what is possible.  At the end, you will have a good starting point
+for a basic API.  The sections that follow will continue to build on this quick start.
+
+Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
 
 ### Create the Project
 Create a new .NET Core console application named **HelloWorldService** in Visual Studio 2017.
 
+Update the framework to use **.NET 4.6.1** by right-clicking on the project in 
+Solution Explorer and then clicking on "Edit HelloWorldService.csproj".  
 
-Update the framework to use **net461** by right-clicking on the project in 
-Solution Explorer and then clicking on "Edit HelloWorldService.csproj".  The resulting project file should look like the following:
+The resulting project file should look like the following:
 {% highlight xml %}
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
@@ -50,14 +54,16 @@ Solution Explorer and then clicking on "Edit HelloWorldService.csproj".  The res
 </Project>
 {% endhighlight %}
 
-Install the **Kuno.AspNetCore** NuGet package.  This will also install the core Kuno NuGet package.  
+Install the **Kuno.AspNetCore** NuGet package.  
+
+> This will also install dependencies including the core Kuno NuGet package.  
 {% highlight nuget %}
 Install-Package Kuno.AspNetCore
 {% endhighlight %}
 
 {% include light-gallery.html images=page.image-set1 %}
 
-#### Create the Request and Endpoint
+#### Create the Request and Service
 
 Create a class named **HelloWorldRequest**.
 {% highlight csharp %}
@@ -66,10 +72,10 @@ public class HelloWorldRequest
     public string Name { get; set;  }
 }
 {% endhighlight %}
-Create an endpoint named **HelloWorld**.
+Create a service named **HelloWorld**.
 {% highlight csharp %}
 [EndPoint("hello/greet")]
-public class HelloWorld : EndPoint<HelloWorldRequest, string>
+public class HelloWorld : Service<HelloWorldRequest, string>
 {
     public override string Receive(HelloWorldRequest instance)
     {
@@ -81,12 +87,13 @@ public class HelloWorld : EndPoint<HelloWorldRequest, string>
 {% include light-gallery.html images=page.image-set2 %}
 
 #### Run the Application
-Initialize a new Stack and run the web host.
+Initialize a new Application Stack and run the web host.
 {% highlight csharp %}
 public static void Main(string[] args)
 {
-    using (var stack = new Stack())
+    using (var stack = new ApplicationStack())
     {
+        // This adds AspNetCore components to the stack and runs the Kestrel web host.
         stack.RunWebHost();
     }
 }

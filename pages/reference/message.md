@@ -20,11 +20,11 @@ current-nav:
           link: '#rules'
 ---
 
-A message is an atomic packet of data that can be transmitted on a channel. Thus, 
+*A message is an atomic packet of data that can be transmitted on a channel. Thus, 
 to transmit data, an application must break the data into one or more packets, wrap each 
 packet as a message, and then send the message on a channel. Likewise, a receiver application 
 receives a message and must extract the data from the message to process it. The message system will 
-try repeatedly to deliver the message (e.g., transmit it from the sender to the receiver) until it succeeds.
+try repeatedly to deliver the message (e.g., transmit it from the sender to the receiver) until it succeeds.*
 
 [Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions](https://www.safaribooksonline.com/library/view/enterprise-integration-patterns/0321200683/) - Safari Books Online
 

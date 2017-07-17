@@ -11,14 +11,12 @@ current-nav:
       link: '#'
       active: true
       children:
-        - title: Add API Definition
-          link: '#update-api-definition'
+        - title: Add the OpenAPI Definition
+          link: '#update-the-openapi-definition'
         - title: Add Code Analysis
           link: '#add-code-analysis'
         - title: Deploy the API
-          link: '#deploy'
-        - title: Integrate
-          link: '#integrate'
+          link: '#deploy-the-api'
 image-set1:
     - /assets/img/next-steps/screen-1.png
     - /assets/img/next-steps/screen-2.png
@@ -28,11 +26,18 @@ image-set2:
     - /assets/img/next-steps/screen-5.png
     - /assets/img/next-steps/screen-6.png
     - /assets/img/next-steps/screen-7.png
+image-set3:
+    - /assets/img/next-steps/screen-8.png
+    - /assets/img/next-steps/screen-9.png
+    - /assets/img/next-steps/screen-10.png
+    - /assets/img/next-steps/screen-11.png
 ---
 
-This section adds to the quick start.  If you haven't completed the quick start yet, you can find it [here](/) or on the right.
+This section builds upon the quick start.  If you haven't completed the quick start yet, you can find it [here](/) or to the right.
 
-#### Add the API Definition
+Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
+
+#### Add the OpenAPI Definition
 Add a new file named **kuno.json** to configure the API.  Point the schema reference to **https://github.com/kuno-framework/kuno/raw/master/kuno/schema.json**.  The
 resulting file should look like the following:
 {% highlight json %}
@@ -72,3 +77,62 @@ public class HelloWorldRequest
 {% endhighlight %}
 
 {% include light-gallery.html images=page.image-set2 %}
+
+### Deploy the API
+
+The easiest way to deploy the API is directly in Visual Studio.  First we will need to turn the console app into a 
+web app so that we get the publishing features enabled.  Right-click on the project in solution explorer and 
+then click on "Edit HelloWorldService.csproj".  In the project file you will want to change the Sdk to **Microsoft.NET.Sdk.Web.**
+{% highlight xml %}
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Kuno.Aspnetcore" Version="0.0.2" />
+    <PackageReference Include="Kuno.CodeAnalysis" Version="0.0.2" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties kuno_1json__JSONSchema="https://github.com/kuno-framework/kuno/raw/master/Kuno/schema.json" /></VisualStudio></ProjectExtensions>
+
+</Project>
+{% endhighlight %}
+
+You will notice that the project icon in Solution Explorer has changed to the web project icon.  First, close the solution and then re-open it.  Now, look for a 
+file named launchSettings.json under Properties.  We need to re-configure the web to use our port and startup location.  The updated file should look like the following.
+
+{% highlight json %}
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:5000",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "HelloWorldService": {
+      "commandName": "Project"
+    }
+  }
+}
+{% endhighlight %}
+
+Now back to publishing.  Right-click on the project in solution explorer and then click "Publish".  Select "Microsoft Azure App Service" and "Create New" then click "Publish".  Make sure you are signed in then enter the information
+to create you new site.  See the images below for an example.  When finished filling this out, click "Create".  It will
+take a couple minutes to create the site and when finished the browser will open to your new site.  Add /swagger to the end of the URL
+and test the site.  You have successfuly deployed you API.
+
+{% include light-gallery.html images=page.image-set3 %}
