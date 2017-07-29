@@ -11,8 +11,8 @@ current-nav:
       link: '#'
       active: true
       children:
-        - title: Add the OpenAPI Definition
-          link: '#update-the-openapi-definition'
+        - title: Add OpenAPI Definition
+          link: '#add-openapi-definition'
         - title: Add Code Analysis
           link: '#add-code-analysis'
         - title: Deploy the API
@@ -37,8 +37,8 @@ This section builds upon the quick start.  If you haven't completed the quick st
 
 Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
 
-#### Add the OpenAPI Definition
-Add a new file named **kuno.json** to configure the API.  Point the schema reference to **https://github.com/kuno-framework/kuno/raw/master/kuno/schema.json**.  The
+#### Add OpenAPI Definition
+Add a new file named **kuno.json** to configure the API and point the schema reference to **https://raw.githubusercontent.com/kuno-framework/kuno/master/Kuno/schema.json**.  The
 resulting file should look like the following:
 {% highlight json %}
 {
@@ -51,6 +51,8 @@ resulting file should look like the following:
 {% endhighlight %}
 Run the application and navigate to [http://localhost:5000/swagger](http://localhost:5000/swagger).  You should see 
 the additional information in the definition.
+
+You can continue to update the Open API definition to add contact, terms of service, etc.
 
 {% include light-gallery.html images=page.image-set1 %}
 

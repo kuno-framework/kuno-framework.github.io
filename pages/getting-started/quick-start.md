@@ -20,8 +20,8 @@ current-nav:
       children:
         - title: Create the Project
           link: '#create-the-project'
-        - title: Create the Request and Service
-          link: '#create-the-request-and-service'
+        - title: Create the Request and Function
+          link: '#create-the-request-and-function'
         - title: Run the Application
           link: '#run-the-application'
         - title: Explore
@@ -32,7 +32,7 @@ current-nav:
       
 ---
 
-Kuno is an integration and composition framework for microservices that brings together core concepts and open-source components.  The
+Kuno is a flexible framework for microservices that brings together core concepts and open-source components.  The
 quick start will give you a better understanding of what is possible.  At the end, you will have a good starting point
 for a basic API.  The sections that follow will continue to build on this quick start.
 
@@ -63,7 +63,7 @@ Install-Package Kuno.AspNetCore
 
 {% include light-gallery.html images=page.image-set1 %}
 
-#### Create the Request and Service
+#### Create the Request and Function
 
 Create a class named **HelloWorldRequest**.
 {% highlight csharp %}
@@ -72,10 +72,10 @@ public class HelloWorldRequest
     public string Name { get; set;  }
 }
 {% endhighlight %}
-Create a service named **HelloWorld**.
+Create a function named **HelloWorld**.
 {% highlight csharp %}
 [EndPoint("hello/greet")]
-public class HelloWorld : Service<HelloWorldRequest, string>
+public class HelloWorld : Function<HelloWorldRequest, string>
 {
     public override string Receive(HelloWorldRequest instance)
     {
@@ -89,9 +89,9 @@ public class HelloWorld : Service<HelloWorldRequest, string>
 #### Run the Application
 Initialize a new Application Stack and run the web host.
 {% highlight csharp %}
-public static void Main(string[] args)
+static void Main(string[] args)
 {
-    using (var stack = new ApplicationStack())
+    using (var stack = new KunoStack())
     {
         // This adds AspNetCore components to the stack and runs the Kestrel web host.
         stack.RunWebHost();

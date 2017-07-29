@@ -6,3 +6,5 @@ group :development, :test do
   gem 'scss_lint', '~> 0.53.0'
   gem 'github-pages'
 end
+
+gem 'wdm', '~> 0.1.0' if Gem.win_platform?
