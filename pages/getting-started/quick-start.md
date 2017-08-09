@@ -18,10 +18,10 @@ current-nav:
       active: true
       link: '#'   
       children:
-        - title: Create the Project
-          link: '#create-the-project'
-        - title: Create the Request and Function
-          link: '#create-the-request-and-function'
+        - title: Create a Project
+          link: '#create-a-project'
+        - title: Create a Request, Function and Host
+          link: '#create-a-request-function-and-host'
         - title: Run the Application
           link: '#run-the-application'
         - title: Explore
@@ -32,13 +32,13 @@ current-nav:
       
 ---
 
-Kuno is a flexible framework for microservices that brings together core concepts and open-source components.  The
+Kuno is a flexible framework for microservices that brings together core concepts and open-source components.  This
 quick start will give you a better understanding of what is possible.  At the end, you will have a good starting point
-for a basic API.  The sections that follow will continue to build on this quick start.
+for basic APIs.  The sections that follow will continue to build upon this quick start.
 
 Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
 
-### Create the Project
+### Create a Project
 Create a new .NET Core console application named **HelloWorldService** in Visual Studio 2017.
 
 Update the framework to use **.NET 4.6.1** by right-clicking on the project in 
@@ -54,16 +54,18 @@ The resulting project file should look like the following:
 </Project>
 {% endhighlight %}
 
-Install the **Kuno.AspNetCore** NuGet package.  
+Install the **Kuno.AspNetCore** NuGet package.  You can do this by running the following command in the Package Manager Console.
 
-> This will also install dependencies including the core Kuno NuGet package.  
 {% highlight nuget %}
 Install-Package Kuno.AspNetCore
 {% endhighlight %}
 
+> Running this command will also install dependencies including the core Kuno NuGet package.  
+
+
 {% include light-gallery.html images=page.image-set1 %}
 
-#### Create the Request and Function
+#### Create a Request, Function and Host
 
 Create a class named **HelloWorldRequest**.
 {% highlight csharp %}
@@ -74,7 +76,7 @@ public class HelloWorldRequest
 {% endhighlight %}
 Create a function named **HelloWorld**.
 {% highlight csharp %}
-[EndPoint("hello/greet")]
+[EndPoint("greet")]
 public class HelloWorld : Function<HelloWorldRequest, string>
 {
     public override string Receive(HelloWorldRequest instance)
@@ -84,10 +86,16 @@ public class HelloWorld : Function<HelloWorldRequest, string>
 }
 {% endhighlight %}
 
-{% include light-gallery.html images=page.image-set2 %}
+> The last snippet does require you to resolve dependencies.  Either use your favorite tool to automatically add them
+or add the following imports.
 
-#### Run the Application
-Initialize a new Application Stack and run the web host.
+{% highlight csharp %}
+using Kuno;
+using Kuno.AspNetCore;
+using Kuno.Services;
+{% endhighlight %}
+
+Initialize a new Stack and call **RunWebHost**.
 {% highlight csharp %}
 static void Main(string[] args)
 {
@@ -99,11 +107,17 @@ static void Main(string[] args)
 }
 {% endhighlight %}
 
+{% include light-gallery.html images=page.image-set2 %}
+
+#### Run the Application
+
+Now that you've added the most basic components, you can start the application in debug more or skip debug mode.  It should start up the console and run the Kestrel host.
+
 #### Explore
 In a web browser, navigate to [http://localhost:5000/swagger](http://localhost:5000/swagger).
 
 1. Expand the Hello World endpoint, click "Try it out", and then "Execute".
-2. Try some of the system endpoints like requests and responses.
+2. After making some calls to your endpoint, try out the Get Requests and Get Responses endpoints.
 3. Check the console to see the output.
 
 {% include light-gallery.html images=page.image-set3 %}
@@ -112,4 +126,5 @@ In a web browser, navigate to [http://localhost:5000/swagger](http://localhost:5
 
 #### Next Steps
 
-Now you've got the basics you can continue on to [next steps](/getting-started/next-steps).
+Now you've got the basics you can continue on to [next steps](/getting-started/next-steps).  There you will update your API definition and endpoints
+with additional information.

@@ -11,12 +11,16 @@ current-nav:
       link: '#'
       active: true
       children:
-        - title: Add OpenAPI Definition
-          link: '#add-openapi-definition'
+        - title: Add an OpenAPI Definition
+          link: '#add-an-openapi-definition'
+        - title: Add Comments and Metadata
+          link: '#add-an-openapi-definition'
         - title: Add Code Analysis
           link: '#add-code-analysis'
         - title: Deploy the API
           link: '#deploy-the-api'
+        - title: Browse Topics
+          link: '#browse-topics'
 image-set1:
     - /assets/img/next-steps/screen-1.png
     - /assets/img/next-steps/screen-2.png
@@ -37,9 +41,9 @@ This section builds upon the quick start.  If you haven't completed the quick st
 
 Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
 
-#### Add OpenAPI Definition
-Add a new file named **kuno.json** to configure the API and point the schema reference to **https://raw.githubusercontent.com/kuno-framework/kuno/master/Kuno/schema.json**.  The
-resulting file should look like the following:
+#### Add an OpenAPI Definition
+Add a new file named **kuno.json** to configure the API and point the schema reference to **http://cdn.kuno.io/schemas/application.json**.  Add a title, description and version.  The
+resulting file should look something like the following:
 {% highlight json %}
 {
   "kuno": {
@@ -56,8 +60,39 @@ You can continue to update the Open API definition to add contact, terms of serv
 
 {% include light-gallery.html images=page.image-set1 %}
 
-### Add Code Analysis
-Install the **Kuno.CodeAnalysis** NuGet package.  This will also install the core Kuno NuGet package.  
+#### Add Comments and Metadata
+You must first go the Project Properties and then find the Build tab.  Make sure that the "XML documentation file" checkbox is checked.  You can leave the default location.
+
+Add summary comments to the **HelloWorld** class and value comments to the **Name** property of the **HelloWorldRequest** class.  Also update the endpoint
+attribute to specify the method and add tags.
+
+{% highlight csharp %}
+public class HelloWorldRequest
+{
+    /// <value>
+    /// The name of the user that will be greeted.
+    /// </value>
+    public string Name { get; set; }
+}
+
+/// <summary>
+/// Greets the user when name is supplied.
+/// </summary>
+[EndPoint("greet", Method = "GET", Tags = new [] { "Greetings" })]
+public class HelloWorld : Function<HelloWorldRequest, string>
+{
+    public override string Receive(HelloWorldRequest instance)
+    {
+        return "Hello " + instance.Name + "!";
+    }
+}
+{% endhighlight %}
+
+Run the application and navigate to [http://localhost:5000/swagger](http://localhost:5000/swagger).  You should see 
+the comments that you have added on the endpoint and model.
+
+#### Add Code Analysis
+Install the **Kuno.CodeAnalysis** NuGet package.  This will install the analyzer.  In the Package Managaer Console run the following command:  
 {% highlight nuget %}
 Install-Package Kuno.CodeAnalysis
 {% endhighlight %}
@@ -94,8 +129,8 @@ then click on "Edit HelloWorldService.csproj".  In the project file you will wan
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kuno.Aspnetcore" Version="0.0.2" />
-    <PackageReference Include="Kuno.CodeAnalysis" Version="0.0.2" />
+    <PackageReference Include="Kuno.Aspnetcore" Version="0.0.7" />
+    <PackageReference Include="Kuno.CodeAnalysis" Version="0.0.7" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties kuno_1json__JSONSchema="https://github.com/kuno-framework/kuno/raw/master/Kuno/schema.json" /></VisualStudio></ProjectExtensions>
@@ -103,7 +138,7 @@ then click on "Edit HelloWorldService.csproj".  In the project file you will wan
 </Project>
 {% endhighlight %}
 
-You will notice that the project icon in Solution Explorer has changed to the web project icon.  First, close the solution and then re-open it.  Now, look for a 
+You will notice that the project icon in Solution Explorer has changed to the web project icon.  Look for a 
 file named launchSettings.json under Properties.  We need to re-configure the web to use our port and startup location.  The updated file should look like the following.
 
 {% highlight json %}
@@ -132,9 +167,15 @@ file named launchSettings.json under Properties.  We need to re-configure the we
 }
 {% endhighlight %}
 
-Now back to publishing.  Right-click on the project in solution explorer and then click "Publish".  Select "Microsoft Azure App Service" and "Create New" then click "Publish".  Make sure you are signed in then enter the information
+Run the project which should now open the web.  If the web looks fine, right-click on the project in solution explorer and then click "Publish".  Select "Microsoft Azure App Service" and "Create New" then click "Publish".  Make sure you are signed in then enter the information
 to create you new site.  See the images below for an example.  When finished filling this out, click "Create".  It will
 take a couple minutes to create the site and when finished the browser will open to your new site.  Add /swagger to the end of the URL
 and test the site.  You have successfuly deployed you API.
 
 {% include light-gallery.html images=page.image-set3 %}
+
+### Browse Topics
+
+More topics can be found in the references section.  There you can find specifics on logging, data access, integration, best practices and more.
+
+Check out the Learn More section for more of an architectural perspective.
