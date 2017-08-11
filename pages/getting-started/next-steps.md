@@ -1,7 +1,7 @@
 ---
 layout: default-right-nav
 title: Next Steps
-description: You've got the basics.  Now let's add some detail.
+description: Welcome to Kuno!  You've got the basics.  Now let's add some detail.
 group: getting-started
 permalink: /getting-started/next-steps
 current-nav:
@@ -39,7 +39,7 @@ image-set3:
 
 This section builds upon the quick start.  If you haven't completed the quick start yet, you can find it [here](/) or to the right.
 
-Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
+Read: 5 minutes | Code: 10 minutes
 
 #### Add an OpenAPI Definition
 Add a new file named **kuno.json** to configure the API and point the schema reference to **http://cdn.kuno.io/schemas/application.json**.  Add a title, description and version.  The
@@ -129,14 +129,16 @@ then click on "Edit HelloWorldService.csproj".  In the project file you will wan
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Kuno.Aspnetcore" Version="0.0.7" />
-    <PackageReference Include="Kuno.CodeAnalysis" Version="0.0.7" />
+    <PackageReference Include="Kuno.Aspnetcore" Version="1.0.0" />
+    <PackageReference Include="Kuno.CodeAnalysis" Version="1.0.0" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties kuno_1json__JSONSchema="https://github.com/kuno-framework/kuno/raw/master/Kuno/schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
 {% endhighlight %}
+
+> Do not change the version of Kuno that you are using.
 
 You will notice that the project icon in Solution Explorer has changed to the web project icon.  Look for a 
 file named launchSettings.json under Properties.  We need to re-configure the web to use our port and startup location.  The updated file should look like the following.
@@ -176,6 +178,4 @@ and test the site.  You have successfuly deployed you API.
 
 ### Browse Topics
 
-More topics can be found in the references section.  There you can find specifics on logging, data access, integration, best practices and more.
-
-Check out the Learn More section for more of an architectural perspective.
+More content can be found in the [Learn More](/learn-more) section.  There you can find specifics on logging, data access, integration, best practices and more.

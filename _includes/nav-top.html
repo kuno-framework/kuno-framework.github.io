@@ -6,8 +6,17 @@
         <a class="navbar-brand" href="/">kuno</a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/">Get Started <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link disabled" href="#">Learn More</a>
+                {% if page.section == 'getting-started' %}
+                    {% assign active = 'active' %}
+                {% endif %}
+
+                <a class="nav-item nav-link {{ active }}" href="/">Get Started <span class="sr-only">(current)</span></a>
+                {% assign active = nil %}
+                {% if page.section == 'learn-more' %}
+                    {% assign active = 'active' %}
+                {% endif %}
+
+                <a class="nav-item nav-link {{ active }}" href="/learn-more">Learn More</a>
                 <a class="nav-item nav-link" href="#">Reference</a>
                 <a class="nav-item nav-link" href="https://github.com/kuno-framework/kuno">Source</a>
             </div>

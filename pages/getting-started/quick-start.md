@@ -1,6 +1,7 @@
 ---
 layout: default-right-nav
 title: Getting Started
+section: getting-started
 description: Welcome to Kuno!  The best way to learn is hands on.  Try the Quick Start below.
 permalink: /
 image-set1:
@@ -32,11 +33,11 @@ current-nav:
       
 ---
 
-Kuno is a flexible framework for microservices that brings together core concepts and open-source components.  This
+Kuno is a flexible framework for microservices that bridges core concepts with open-source components.  This
 quick start will give you a better understanding of what is possible.  At the end, you will have a good starting point
 for basic APIs.  The sections that follow will continue to build upon this quick start.
 
-Read: 2 minutes | Code: 5 minutes | Watch: 5 minutes
+Read: 2 minutes | Code: 5 minutes
 
 ### Create a Project
 Create a new .NET Core console application named **HelloWorldService** in Visual Studio 2017.

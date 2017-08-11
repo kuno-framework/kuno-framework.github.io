@@ -14,7 +14,14 @@
 {% include page-header.html %}
 
 <div class="container">
-    {{ content }}
+    <div class="row">
+        <div class="col-12 col-md-3 push-md-9 bd-sidebar">
+            {% include nav-right.html %}
+        </div>
+        <main class="col-12 col-md-9 pull-md-3 bd-content" role="main">
+            {{ content }}
+        </main>
+    </div>
 </div>
 {% include footer.html %}
 </body>
